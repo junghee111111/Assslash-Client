@@ -1,14 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// © 2020 Junghee Wang <agent474@naver.com>. All rights reserved.
 
 
 #include "CalculateUtil.h"
 
 /**
- * 
- * @param damageAmount 
- * @param attackTraceDir 
- * @param impulseX 
- * @param impulseZ 
+ * Calculate impulse force when hit by ass
+ * @param damageAmount damage taken
+ * @param attackTraceDir attack trace direction (To the left or right)
+ * @param impulseX return pin, X-axis force 
+ * @param impulseZ return pin, Z-axis force
  */
 void UCalculateUtil::Calculate_ImpulseForce(
 	int32 damageAmount,int32 attackTraceDir, double& impulseX, double& impulseZ

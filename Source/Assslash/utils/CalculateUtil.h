@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// © 2020 Junghee Wang <agent474@naver.com>. All rights reserved.
 
 #pragma once
 
@@ -6,9 +6,6 @@
 #include "UObject/NoExportTypes.h"
 #include "CalculateUtil.generated.h"
 
-/**
- * 
- */
 UCLASS(Blueprintable)
 class ASSSLASH_API UCalculateUtil : public UObject
 {
