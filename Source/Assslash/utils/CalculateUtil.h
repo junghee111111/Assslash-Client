@@ -12,7 +12,7 @@ class ASSSLASH_API UCalculateUtil : public UObject
 	GENERATED_BODY()
 
 	UFUNCTION(BlueprintPure, Category="Util|Calculator")
-	static void Calculate_ImpulseForce(int32 damageAmount, int32 attackTraceDir, double& impulseX, double& impulseZ);
+	static void Calculate_ImpulseForce(int32 damageAmount, int32 attackTraceDir, int32 CON, int32 opMaxHP, double& impulseX, double& impulseZ);
 
 	UFUNCTION(BlueprintPure, Category="Util|Calculator")
 	static void Calculate_PlayerAbilityByStat(int32 STR, int32 DEX, int32 LUK, int32 SPD, int32 CON, int32& Att,

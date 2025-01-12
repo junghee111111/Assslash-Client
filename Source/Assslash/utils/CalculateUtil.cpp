@@ -7,11 +7,17 @@
  * Calculate impulse force when hit by ass
  * @param damageAmount damage taken
  * @param attackTraceDir attack trace direction (To the left or right)
+ * @param CON my CON Stat for additional force
+ * @param opMaxHP opponent's max HP Value for relative force calculation
  * @param impulseX return pin, X-axis force 
  * @param impulseZ return pin, Z-axis force
  */
 void UCalculateUtil::Calculate_ImpulseForce(
-	int32 damageAmount,int32 attackTraceDir, double& impulseX, double& impulseZ
+	int32 damageAmount,
+	int32 attackTraceDir,
+	int32 CON,
+	int32 opMaxHP,
+	double& impulseX, double& impulseZ
 	)
 {
 	impulseX = (damageAmount * 6 + 500) * attackTraceDir;
@@ -27,15 +33,15 @@ void UCalculateUtil::Calculate_PlayerAbilityByStat(
 {
 	// 공격력
 	if(STR>20){
-		Att = 20 + (STR-20)*2;
+		Att = 20 + (STR-20)*2 + round(DEX*0.5);
 	}else{
-		Att = STR;
+		Att = STR + (int)round(DEX*0.3);
 	}
 
 	// 최소 공격력
 	AttMin = (int)round(Att*(CON/100));
 	if(AttMin>=Att)
-	{
+	{ 
 		AttMin = Att-1;
 	}
 
