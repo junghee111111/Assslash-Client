@@ -11,7 +11,7 @@ class ASSSLASH_API UCalculateUtil : public UObject
 {
 	GENERATED_BODY()
 
-	UFUNCTION(BlueprintPure, Category="Util|Calculator")
+	UFUNCTION(BlueprintCallable, Category="Util|Calculator")
 	static void Calculate_ImpulseForce(int32 damageAmount, int32 attackTraceDir, int32 CON, int32 opMaxHP, double& impulseX, double& impulseZ);
 
 	UFUNCTION(BlueprintPure, Category="Util|Calculator")
