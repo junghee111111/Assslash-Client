@@ -20,14 +20,14 @@ void UCalculateUtil::Calculate_ImpulseForce(
 	double& impulseX, double& impulseZ
 	)
 {
-	double adjustFactor =  damageAmount / (double)opMaxHP;
+	double adjustFactor =  (damageAmount / (double)opMaxHP) * 10;
 	if(adjustFactor > 1.0)
 	{
 		adjustFactor = 1.0;
 	}
 	
-	impulseX = (damageAmount * 6 * adjustFactor + 400 + CON * 2) * attackTraceDir;
-	impulseZ = ((damageAmount * 8) * adjustFactor + 200 + CON * 2);
+	impulseX = (damageAmount * 12 * adjustFactor + 200 + CON * 3) * attackTraceDir;
+	impulseZ = ((damageAmount * 10) * adjustFactor + 80 + CON * 3);
 }
 
 void UCalculateUtil::Calculate_PlayerAbilityByStat(
@@ -45,12 +45,8 @@ void UCalculateUtil::Calculate_PlayerAbilityByStat(
 	}
 
 	// 최소 공격력
-	AttMin = (int)round(Att*(CON/100));
-	if(AttMin>=Att)
-	{ 
-		AttMin = Att-1;
-	}
-
+	AttMin = (int)round(Att/2.0) + (int)round(Att*(CON/200));
+	
 	// 방어력
 	if(STR>20)
 	{
