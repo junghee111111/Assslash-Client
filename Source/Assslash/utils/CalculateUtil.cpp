@@ -20,8 +20,14 @@ void UCalculateUtil::Calculate_ImpulseForce(
 	double& impulseX, double& impulseZ
 	)
 {
-	impulseX = (damageAmount * 6 + 500) * attackTraceDir;
-	impulseZ = (damageAmount * 8) + 300;
+	double adjustFactor =  damageAmount / (double)opMaxHP;
+	if(adjustFactor > 1.0)
+	{
+		adjustFactor = 1.0;
+	}
+	
+	impulseX = (damageAmount * 6 + 485 + CON) * adjustFactor * attackTraceDir;
+	impulseZ = ((damageAmount * 8) + 285 + CON) * adjustFactor;
 }
 
 void UCalculateUtil::Calculate_PlayerAbilityByStat(
